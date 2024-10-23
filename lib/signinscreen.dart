@@ -6,7 +6,7 @@ class SignInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF003F63),
+      backgroundColor: Color(0xFF4A90E2),
       body: Center(
         child: SingleChildScrollView(
           child: Padding(
@@ -62,7 +62,7 @@ class SignInScreen extends StatelessWidget {
                   child: Text(
                     'Don\'t have an account? Sign Up',
                     style: TextStyle(
-                      color: Colors.white70,
+                      color: Colors.black,
                       fontSize: 16,
                     ),
                   ),
@@ -78,13 +78,13 @@ class SignInScreen extends StatelessWidget {
   Widget _buildTextField(IconData icon, String hintText, bool isPassword) {
     return TextField(
       obscureText: isPassword,
-      style: TextStyle(color: Colors.white),
+      style: TextStyle(color: Colors.black),
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: TextStyle(color: Colors.white54),
-        prefixIcon: Icon(icon, color: Colors.white),
+        hintStyle: TextStyle(color: Colors.black),
+        prefixIcon: Icon(icon, color: Colors.black),
         filled: true,
-        fillColor: Color(0xFF005082),
+        fillColor: Colors.white,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: BorderSide.none,

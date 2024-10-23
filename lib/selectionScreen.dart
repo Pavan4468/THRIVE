@@ -5,13 +5,13 @@ class SelectionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF003F63),
+      backgroundColor: Color(0xFF4A90E2), // Attractive background color
       appBar: AppBar(
         title: Text(
           'Select Your Options',
           style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Color(0xFF003F63),
+        backgroundColor: Color(0xFF4A90E2),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -19,50 +19,85 @@ class SelectionScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Section title for singers
+              // Section title for company names
               Text(
-                'Choose Singers',
+                'Enter Company Name',
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 22,
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               SizedBox(height: 10),
-              // Placeholder for singers list
-              Container(
-                height: 200, // Fixed height for the empty singers section
-                color: Colors.grey[800], // Background color for visual indication
-                child: Center(
-                  child: Text(
-                    'No Singers Available',
-                    style: TextStyle(color: Colors.white),
+              // Text field for company name input
+              TextField(
+                decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide.none,
                   ),
+                  hintText: 'Enter the company name',
                 ),
               ),
               SizedBox(height: 20),
-              // Section title for languages
+
+              // Section title for project types
               Text(
-                'Choose a Language',
+                'Choose Project Type',
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 22,
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               SizedBox(height: 10),
-              // Placeholder for languages selection
-              Container(
-                height: 100, // Fixed height for the empty languages section
-                color: Colors.grey[800], // Background color for visual indication
-                child: Center(
-                  child: Text(
-                    'No Languages Available',
-                    style: TextStyle(color: Colors.white),
+              // Dropdown for project types
+              DropdownButtonFormField<String>(
+                items: [
+                  DropdownMenuItem(value: 'Villa', child: Text('Villa')),
+                  DropdownMenuItem(value: 'Apartment', child: Text('Apartment')),
+                  DropdownMenuItem(value: 'Individual House', child: Text('Individual House')),
+                ],
+                onChanged: (value) {},
+                decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide.none,
                   ),
+                  hintText: 'Select a project type',
+                ),
+              ),
+              SizedBox(height: 20),
+
+              // Section title for budget
+              Text(
+                'Enter Budget',
+                style: TextStyle(
+                  fontSize: 22,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 10),
+              // Text field for budget input
+              TextField(
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide.none,
+                  ),
+                  hintText: 'Enter your budget',
                 ),
               ),
               SizedBox(height: 30),
+
               // "Next" button to navigate to HomePage
               Center(
                 child: ElevatedButton(
@@ -74,7 +109,7 @@ class SelectionScreen extends StatelessWidget {
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
-                    foregroundColor: Color(0xFF003F63),
+                    foregroundColor: Color(0xFF4A90E2),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
